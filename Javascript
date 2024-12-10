@@ -1,0 +1,32 @@
+function mostFrequentChar(s) {
+    // Create a map to store character frequencies
+    let freqMap = new Map();
+    
+    // Loop through the string and count frequencies of alphabetic characters
+    for (let char of s) {
+        if (/[a-zA-Z]/.test(char)) { // Only consider alphabet letters
+            char = char.toUpperCase(); // Convert to uppercase to handle case insensitivity
+            freqMap.set(char, (freqMap.get(char) || 0) + 1);
+        }
+    }
+
+    // Find the character with the highest frequency
+    let maxChar = null;
+    let maxFreq = 0;
+
+    for (let [char, freq] of freqMap) {
+        if (freq > maxFreq) {
+            maxFreq = freq;
+            maxChar = char;
+        }
+    }
+
+    return maxChar;
+}
+
+// Example usage
+const s1 = "abcddefda1111133333333";
+const s2 = "AA6486650ссовазванеВыс0888-123123";
+
+console.log("Most frequent character:", mostFrequentChar(s1)); // Output: "D"
+console.log("Most frequent character:", mostFrequentChar(s2)); // Output: "B"
