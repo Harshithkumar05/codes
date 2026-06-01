@@ -1,0 +1,30 @@
+{
+  "name": "target-receipt-correction-automation",
+  "version": "1.0.0",
+  "description": "Production-safe browser automation for Target Receipt Correction workflow with Synergy case creation",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "DRY_RUN=true HEADLESS=false node src/index.js",
+    "prod": "DRY_RUN=false HEADLESS=false node src/index.js",
+    "codegen": "playwright codegen"
+  },
+  "keywords": [
+    "target",
+    "automation",
+    "playwright",
+    "receipt-correction",
+    "synergy"
+  ],
+  "author": "Target Automation Team",
+  "license": "PROPRIETARY",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "playwright": "^1.40.1"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
